@@ -1,0 +1,165 @@
+{
+  "zip_sha256": "8d05f5a338ef0efee15a89a59aee44839ce859304a61d7f0d323cfa0a2926558",
+  "files": [
+    {
+      "path": ".env.example",
+      "status": "identical"
+    },
+    {
+      "path": ".gitignore",
+      "status": "identical"
+    },
+    {
+      "path": "PRODUCT.md",
+      "status": "identical"
+    },
+    {
+      "path": "README.md",
+      "status": "identical"
+    },
+    {
+      "path": "backend/__init__.py",
+      "status": "identical"
+    },
+    {
+      "path": "backend/application.py",
+      "status": "identical"
+    },
+    {
+      "path": "backend/auth.py",
+      "status": "identical"
+    },
+    {
+      "path": "backend/discovery.py",
+      "status": "identical"
+    },
+    {
+      "path": "backend/live.py",
+      "status": "identical"
+    },
+    {
+      "path": "backend/main.py",
+      "status": "identical"
+    },
+    {
+      "path": "backend/providers.py",
+      "status": "identical"
+    },
+    {
+      "path": "backend/requirements.txt",
+      "status": "identical"
+    },
+    {
+      "path": "backend/test_core.py",
+      "status": "identical"
+    },
+    {
+      "path": "compose.yaml",
+      "status": "identical"
+    },
+    {
+      "path": "index.html",
+      "status": "identical"
+    },
+    {
+      "path": "package-lock.json",
+      "status": "identical"
+    },
+    {
+      "path": "package.json",
+      "status": "identical"
+    },
+    {
+      "path": "playwright.config.ts",
+      "status": "identical"
+    },
+    {
+      "path": "public/favicon.svg",
+      "status": "identical"
+    },
+    {
+      "path": "public/manifest.webmanifest",
+      "status": "identical"
+    },
+    {
+      "path": "src/Account.tsx",
+      "status": "identical"
+    },
+    {
+      "path": "src/App.tsx",
+      "status": "changed"
+    },
+    {
+      "path": "src/Library.tsx",
+      "status": "identical"
+    },
+    {
+      "path": "src/Liquid.tsx",
+      "status": "identical"
+    },
+    {
+      "path": "src/Social.tsx",
+      "status": "identical"
+    },
+    {
+      "path": "src/SyncWave.tsx",
+      "status": "identical"
+    },
+    {
+      "path": "src/api.ts",
+      "status": "identical"
+    },
+    {
+      "path": "src/audio.ts",
+      "status": "identical"
+    },
+    {
+      "path": "src/main.tsx",
+      "status": "identical"
+    },
+    {
+      "path": "src/styles.css",
+      "status": "changed"
+    },
+    {
+      "path": "src/supabase.ts",
+      "status": "identical"
+    },
+    {
+      "path": "src/types.ts",
+      "status": "identical"
+    },
+    {
+      "path": "src/vite-env.d.ts",
+      "status": "identical"
+    },
+    {
+      "path": "supabase/.gitignore",
+      "status": "identical"
+    },
+    {
+      "path": "supabase/config.toml",
+      "status": "identical"
+    },
+    {
+      "path": "supabase/migrations/20261029180254_afterhours_core.sql",
+      "status": "identical"
+    },
+    {
+      "path": "tests/browser/app.spec.ts",
+      "status": "identical"
+    },
+    {
+      "path": "tests/schema.mjs",
+      "status": "identical"
+    },
+    {
+      "path": "tsconfig.json",
+      "status": "identical"
+    },
+    {
+      "path": "vite.config.ts",
+      "status": "identical"
+    }
+  ]
+}

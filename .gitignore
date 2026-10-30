@@ -1,0 +1,16 @@
+node_modules/
+dist/
+.venv/
+__pycache__/
+.pytest_cache/
+*.db
+.env
+test-results/
+playwright-report/
+.impeccable/review/
+work/
+*.tsbuildinfo
+debug.log
+.env.*
+!.env.example
+supabase/.temp/

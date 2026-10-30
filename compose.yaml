@@ -1,0 +1,7 @@
+services:
+  redis:
+    image: redis:7.4-alpine
+    ports: ["127.0.0.1:6381:6379"]
+    command: ["redis-server", "--save", "", "--appendonly", "no"]
+    restart: unless-stopped
+    # Ephemeral rooms/chat must not enter AOF or database backups.

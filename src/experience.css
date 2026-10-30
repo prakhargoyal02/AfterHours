@@ -1,0 +1,127 @@
+/* Shared listening surfaces. Tokens apply to every screen, not just the hero. */
+:root { --ground:#090b10; --surface:#111620; --raised:#18202b; --raised-2:#202a38; --text:#edf1f6; --muted:#a9b4c3; --soft:#9ba7b7; --line:#29313e; --accent:#d1e1f1; }
+.app,.sidebar { background:var(--ground); }
+h1,h2,.brand { letter-spacing:-.04em; }
+button,summary,.moods button,.search-form button,.search-form select,.profile-chip { min-height:44px; }
+p { font-size:14px; }
+small { font-size:12px; }
+.wordmark { color:var(--text); font-size:17px; font-weight:750; letter-spacing:-.03em; }
+.topbar-context { font-size:12px; }
+.sidebar nav button { min-height:48px; color:var(--muted); font-size:13px; }
+.sidebar-note,.hero-meta,.art-caption,.section-heading>span,.track-head { color:var(--muted); }
+.hero { min-height:490px; }
+.hero-copy p { font-size:16px; }
+.hero-art::before { display:none; }
+.hero-art { height:490px; }
+.hero h1 { font-size:clamp(58px,6vw,90px); }
+.hero-meta { text-transform:none; letter-spacing:0; font-size:12px; }
+.hero-meta span:first-child { color:var(--muted); }
+.section-heading h2 { font-size:30px; }
+.track-main,.track-main>span:not(.art-placeholder) { font-size:14px; }
+.track-main small { font-size:12px; }
+.track-row { min-height:76px; }
+.track-menu>div { background:var(--raised); }
+.player-dock { background:rgba(15,20,29,.97); border-color:var(--line); }
+.playing-track { border:0; border-radius:12px; text-align:left; min-width:0; padding:8px; }
+.playing-track:disabled { opacity:1; }
+.connection-banner { padding:16px; margin-top:18px; color:#f4cf9f; background:#2b211a; border-radius:12px; }
+.account-panel { max-width:680px; padding:32px; border:1px solid var(--line); border-radius:16px; background:var(--surface); }
+.account-panel h2 { max-width:15ch; }
+.account-panel input { width:100%; }
+.account-panel form { gap:18px; }
+.music-sheet { position:fixed; inset:auto 0 20px; width:min(660px,calc(100% - 32px)); max-height:85dvh; margin:auto; padding:0; border:0; border-radius:24px; color:var(--text); background:var(--surface); box-shadow:0 30px 90px #0009; overflow:auto; }
+.music-sheet::backdrop { background:#03060bd1; backdrop-filter:blur(12px); }
+.sheet-surface { position:relative; padding:24px; isolation:isolate; }
+.sheet-heading { position:relative; z-index:2; display:flex; justify-content:space-between; align-items:center; gap:16px; margin-bottom:24px; font-size:15px; touch-action:pan-x; }
+.sheet-heading>span { font-weight:650; }
+.sheet-heading button { min-width:64px; }
+.full-player { inset:20px; width:calc(100% - 40px); max-width:1400px; max-height:calc(100dvh - 40px); height:calc(100dvh - 40px); }
+.full-player .sheet-surface { min-height:100%; overflow:hidden; }
+.artwork-atmosphere { position:absolute; z-index:-2; inset:0; width:100%; height:100%; object-fit:cover; filter:blur(70px) brightness(.24) saturate(.7); opacity:.8; pointer-events:none; }
+.listening-stage { position:relative; display:grid; grid-template-columns:1.2fr 1fr; gap:5%; align-items:center; min-height:calc(100dvh - 170px); padding:0 5%; }
+.listening-art { position:relative; width:100%; aspect-ratio:1; touch-action:pan-y; }
+.listening-art .liquid { position:absolute; inset:0; opacity:.8; }
+.record-art { position:absolute; width:48%; height:48%; left:26%; top:26%; border-radius:14px; object-fit:cover; box-shadow:0 20px 50px #0008; }
+.listening-details { min-width:0; }
+.listening-details h1 { font-size:clamp(30px,4vw,60px); line-height:1.08; overflow-wrap:anywhere; margin:0 0 14px; }
+.listening-details>p { font-size:18px; }
+.listening-progress { margin-top:40px; }
+.listening-progress input { width:100%; min-height:32px; }
+.listening-progress>div { display:flex; justify-content:space-between; color:var(--muted); font-size:12px; font-variant-numeric:tabular-nums; }
+.listening-controls { display:flex; gap:12px; justify-content:space-between; align-items:center; margin:22px 0; }
+.listening-controls button { border:0; display:grid; place-items:center; padding:10px; }
+.listening-controls .large-play { width:76px; height:76px; border-radius:50%; color:var(--ground); }
+.listening-controls button[aria-pressed=true] { background:var(--raised); color:var(--accent); }
+.listening-actions { display:flex; justify-content:space-between; gap:8px; margin:30px 0; }
+.listening-actions button { display:flex; align-items:center; gap:8px; padding:12px; border:0; }
+.listening-actions svg { width:18px; }
+.provider-credit { display:block; color:var(--muted); font-size:12px; text-align:center; }
+.search-form input::placeholder { color:var(--muted); }
+.search-form select,.moods button { color:var(--muted); background:var(--surface); border-color:var(--line); }
+.art-placeholder { color:var(--accent); background:var(--raised); }
+.queue-item { display:flex; align-items:center; gap:8px; padding:14px 0; border-bottom:1px solid var(--line); }
+.queue-item>button:first-child,.queue-item>span { flex:1; text-align:left; min-width:0; overflow-wrap:anywhere; }
+.room-atmosphere { position:relative; height:300px; max-width:700px; margin:auto; }
+.room-atmosphere .liquid { position:absolute; inset:0; opacity:.55; }
+.room-atmosphere>div { position:absolute; inset:auto 0 12px; text-align:center; }
+.room-atmosphere h3 { font-size:26px; }
+.room-atmosphere p { margin-inline:auto; }
+.sync-experience { padding-block:38px; }
+.chat-bubble { position:fixed; bottom:calc(var(--player-height) + 22px); right:26px; z-index:40; background:var(--accent); color:var(--ground); padding:14px 20px; box-shadow:0 12px 40px #0007; }
+.messages { max-height:45dvh; overflow:auto; overscroll-behavior:contain; }
+.messages p { padding:14px; border-radius:12px; background:var(--raised); }
+.messages strong { display:block; color:var(--text); margin-bottom:5px; }
+.weather-form { display:grid; gap:18px; }
+.weather-form input,.weather-form select { width:100%; }
+.chat-message { padding:16px 0; border-bottom:1px solid var(--line); }
+.chat-message>p { margin:8px 0; background:transparent; padding:0; }
+.chat-song { padding:12px; background:var(--raised); border-radius:12px; margin:12px 0; }
+.chat-song .inline { margin-top:10px; }
+.reactions { display:flex; gap:6px; }
+.reactions button { padding:7px 10px; }
+[hidden] { display:none!important; }
+@media (max-width:760px) {
+  .sidebar { background:#0c1018; height:calc(66px + env(safe-area-inset-bottom)); padding-bottom:env(safe-area-inset-bottom); }
+  .sidebar nav button { font-size:10px; }
+  .topbar-context>span:last-child { display:none; }
+  .wordmark { display:block!important; }
+  .hero { min-height:370px; padding-top:0; }
+  .hero-copy { padding-top:36px; }
+  .hero h1 { font-size:54px; max-width:320px; }
+  .hero-copy p { font-size:14px; max-width:220px; }
+  .hero-art { top:145px; right:-88px; width:300px; height:240px; opacity:.55; }
+  .hero-meta { font-size:11px; max-width:220px; }
+  .search-form { padding-block:8px; }
+  .search-form input { font-size:14px; }
+  .search-form select { font-size:12px; width:100px; }
+  .search-form button { font-size:12px; }
+  .moods button { font-size:12px; }
+  .section-heading h2 { font-size:26px; }
+  .track-main,.track-main>span:not(.art-placeholder) { font-size:13px; }
+  .track-main small { font-size:11px; }
+  .track-row { grid-template-columns:minmax(0,1fr) 44px 44px; }
+  .track-row .icon-button,.track-menu summary { min-width:44px; min-height:44px; }
+  .player-dock { bottom:calc(66px + env(safe-area-inset-bottom)); }
+  .playing-track { padding:0; }
+  .main-shell { padding-bottom:calc(var(--player-height) + 80px + env(safe-area-inset-bottom)); }
+  .account-panel { padding:24px 18px; }
+  .full-player { inset:0; width:100%; height:100dvh; max-height:100dvh; border-radius:0; }
+  .sheet-surface { padding:20px; }
+  .full-player .sheet-surface { padding-bottom:calc(24px + env(safe-area-inset-bottom)); }
+  .sheet-heading { margin-bottom:6px; }
+  .listening-stage { display:flex; flex-direction:column; min-height:0; gap:0; padding:0; }
+  .listening-art { width:min(100%,390px); max-height:38dvh; aspect-ratio:1; }
+  .listening-details { width:100%; max-width:440px; }
+  .listening-details h1 { font-size:30px; }
+  .listening-details>p { font-size:15px; margin-bottom:10px; }
+  .listening-progress { margin-top:18px; }
+  .listening-controls { margin:16px 0; }
+  .listening-controls .large-play { width:64px; height:64px; }
+  .listening-actions { margin:16px 0; }
+  .chat-bubble { bottom:calc(var(--player-height) + 82px + env(safe-area-inset-bottom)); right:18px; }
+  .toast { font-size:13px; }
+}
+.onboarding-progress { display:flex; gap:12px; margin:24px 0; }
+.onboarding-progress span { flex:1; padding:12px 0; border-top:2px solid #41464b; color:#a5aab2; font-size:.8rem; }
+.onboarding-progress [aria-current="step"] { border-color:#e4e8e9; color:#f3f4f4; }
+.onboarding-fields { display:grid; gap:16px; }

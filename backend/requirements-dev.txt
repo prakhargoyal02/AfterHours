@@ -1,0 +1,4 @@
+-r requirements.txt
+fakeredis[lua]==2.32.1
+lupa==2.8
+sortedcontainers==2.4.0
