@@ -4,6 +4,7 @@ import { useGSAP } from '@gsap/react';
 import type { User } from '@supabase/supabase-js';
 import { database, supabase } from './supabase';
 import { api } from './api';
+import ProfilePass from './ProfilePass';
 
 export function AuthForm({ recovery, done }: { recovery: boolean; done: () => void }) {
   const [mode,setMode]=useState(recovery?'recover':'login');
@@ -123,11 +124,11 @@ export function Profile({user,onMessage,onDeleted}:{user:User;onMessage:(s:strin
       <p>You can leave these blank and change them anytime.</p></div>}
       {(!onboarding||step===2)&&<div className="onboarding-fields">
       <label>Profile visibility<select value={profile.visibility} onChange={e=>setProfile({...profile,visibility:e.target.value})}><option value="private">Private</option><option value="public">Public</option></select></label>
-      <p>Public profiles can be discovered by other listeners. Your listening history stays private.</p>
+      <p>Public profiles can be discovered by other listeners. Friends and people you invite can see your profile details. Your listening history stays private.</p>
       <label className="check"><input type="checkbox" checked={prefs.history_enabled} onChange={e=>setPrefs({...prefs,history_enabled:e.target.checked})}/>Save listening history</label></div>}
       <div className="inline">{onboarding&&step>0&&<button type="button" disabled={busy} onClick={()=>moveStep(step-1)}>Back</button>}
       <button className="primary" disabled={busy}>{busy?'Saving…':onboarding?step<2?'Continue':'Start listening':'Save profile'}</button></div>
-    </form><button onClick={async()=>{await database().auth.signOut();onDeleted();}}>Sign out</button>
+    </form>{!onboarding&&<ProfilePass userId={user.id} isPublic={profile.visibility==='public'} onMessage={onMessage}/>}<button onClick={async()=>{await database().auth.signOut();onDeleted();}}>Sign out</button>
     <details><summary>Delete account</summary><p>This permanently deletes your AfterHours account, library and uploaded photos.</p>
       <label>Type DELETE to continue<input value={confirm} onChange={e=>setConfirm(e.target.value)}/></label>
       <button className="danger" disabled={confirm!=='DELETE'||busy} onClick={()=>setDeleting(true)}>Delete my account</button>

@@ -62,7 +62,7 @@ Database checks run migrations in PGlite with separate user roles and verify iso
 
 ## Remaining product scope
 
-SameWave matching/consent, Silent Room video, music-first pings, full friend relationships, profile Music Passes, YouTube official visible-player fallback and additional social/discovery polish remain unfinished. Guided onboarding covers identity, music preferences and privacy with an atomic, caller-only save. Its separate browser suite uses a simulated signed-in session; real email signup remains to be verified. The audit is the baseline, not a completion claim. Deployment alone is not completion.
+SameWave matching/consent, Silent Room video, YouTube official visible-player fallback and additional social/discovery polish remain unfinished. Friendships, public playlist discovery, ephemeral music pings and profile Music Passes are implemented. Pings still require live Redis verification. Guided onboarding covers identity, music preferences and privacy with an atomic, caller-only save. Its separate browser suite uses a simulated signed-in session; real email signup remains to be verified. The audit is the baseline, not a completion claim. Deployment alone is not completion.
 
 ## Security review
 

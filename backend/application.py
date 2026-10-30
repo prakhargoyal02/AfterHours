@@ -21,11 +21,13 @@ async def lifespan(app):
     yield
     await live.redis.aclose()
 app=FastAPI(title='AfterHours',lifespan=lifespan)
+from .pings import ping_router
+app.include_router(ping_router(lambda: live.redis))
 
 @app.exception_handler(RedisError)
 async def redis_error(request,error):
     from fastapi.responses import JSONResponse
-    return JSONResponse(status_code=503,content={'detail':'Shared listening is unavailable. Start the dedicated Redis service.'})
+    return JSONResponse(status_code=503,content={'detail':'Live features are temporarily unavailable. Please try again shortly.'})
 
 @app.get('/api/health')
 async def health():

@@ -31,7 +31,7 @@ Removed anonymous execution privileges found by the live advisor. Authenticated-
 ## Still unfinished
 No live Redis runtime was found (no Docker/WSL/Redis installation). Local Compose is prepared on isolated localhost port 6381.
 Dedicated Google credentials, Auth redirect configuration, account-deletion server secret and Jamendo key still need configuration.
-SameWave, Silent Room, music pings, official visible YouTube fallback, full friends/social discovery and profile Music Passes remain unfinished.
+SameWave, Silent Room and official visible YouTube fallback remain unfinished. Live Redis-dependent features still require real service verification.
 This is a tested recovery/core-experience checkpoint, not a finished product or deployment claim.
 
 ## Continued: guided account setup
@@ -40,3 +40,11 @@ This is a tested recovery/core-experience checkpoint, not a finished product or 
 - Profile and preferences save in one caller-only database transaction. Applied only to AfterHours.
 - Database policy suite now passes 34 checks, including rollback, duplicate usernames and anonymous execution denial.
 - Two additional desktop/mobile browser tests pass using simulated authentication and API responses. Live email verification remains untested.
+
+## Continued: people and music-first sharing
+- Discover listeners, follow/unfollow, follower views, friend requests, accept/decline/cancel/remove, public playlist browsing in profile sheets.
+- Friendship policies prevent self-acceptance and identity changes; blocks remove friendships and follows. Requests explicitly share sender profile identity with the recipient.
+- Music pings: four fixed kinds, a required resolved song, accepted friends only, one-hour Redis expiry, cooldowns and owner-only dismissal. No permanent inbox. Live Redis is still unconfigured; these server paths are verified with a test Redis implementation.
+- Public profile Music Passes with one-use redemption and privacy/block checks; selected-song Music Passes; editable playlist privacy.
+- Floating Library edit/delete sheets and retryable loading errors.
+- Verification: 27 backend tests, 49 database checks, four signed-in desktop/mobile browser tests (including onboarding, social actions, playlist browsing, reporting retry and ping dismissal), and production build pass. Existing eight core browser tests passed in the earlier checkpoint.
